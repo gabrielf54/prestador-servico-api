@@ -33,5 +33,9 @@ public class Servico {
 
     @Column(name = "data_hora", nullable = false)
     private LocalDateTime dataHora;
+
+    @Column(name = "descricao")
+    private String descricao;
+
 }
 
