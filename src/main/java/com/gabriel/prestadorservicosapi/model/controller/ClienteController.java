@@ -20,8 +20,13 @@ public class ClienteController {
         return ResponseEntity.ok().body(service.buscarClientes());
     }
 
+    @GetMapping("/cliente_id")
+    public ResponseEntity<ClienteDTO> buscarPorId(@PathVariable(value = "cliente_id") Long id) {
+        return ResponseEntity.ok().body(service.buscarClientePorId(id));
+    }
+
     @PostMapping
     public ResponseEntity<ClienteDTO> criarCliente(@RequestBody ClienteDTO cliente) {
-        return  ResponseEntity.ok().body(service.criarCliente(cliente));
+        return ResponseEntity.ok().body(service.criarCliente(cliente));
     }
 }
